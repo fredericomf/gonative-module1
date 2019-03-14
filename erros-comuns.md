@@ -2,6 +2,16 @@
 
 Lista de erros comuns enfrentados no Android:
 
+## Ao tentar baixar o SDK Android temos a exception: java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema
+
+Para resolver, inclua no ~/.profile:
+```bash
+export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee"
+```
+
+ou rode o comando acima antes de roda o ~/Android/Sdk/tools/bin/sdkmanager  "platform-tools" "platforms;android-27" "build-tools;27.0.3"
+
+
 ## SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable
 
 Esse erro acontece quando, mesmo setando o ~/[USER]/.profiles, o caminho do SDK do android não é encontrado

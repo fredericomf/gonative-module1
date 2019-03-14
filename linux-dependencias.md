@@ -26,7 +26,7 @@ Com o NodeJS instalado, podemos instalar o CLI (Command Line Interface) do React
 ```sh
 sudo npm install -g react-native-cli
 
-// Ou yarn global add react-native-cli
+// Ou sudo yarn global add react-native-cli
 ```
 
 ## Instalando JDK (Java Development Kit)

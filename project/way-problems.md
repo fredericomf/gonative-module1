@@ -19,7 +19,7 @@ your bundle is packaged correctly or you're running a packager server."
 After this error I have installed adb using Ubuntu apt:
 
 ```bash
-$ sudo apd install adb
+$ sudo apt install adb
 ```
 
 Another error rose up on Smartphone:
@@ -39,3 +39,13 @@ URL: http://localhost:8081/index.delta?platform=android&dev=true&minify=false
 It's works!
 
 Running the suggested adb command: adb reverse tcp:8081 tcp:8081
+
+
+### ADB : Device is unauthorized:
+
+To solve (revoke authorized devices on android developers menu before execute this commands):
+
+```bash
+sudo adb kill-server
+sudo adb start-server
+```
