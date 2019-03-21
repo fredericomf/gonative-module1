@@ -80,16 +80,16 @@ yarn eslint --init
 9. Confirm with 'Y' and wait the installation process
 10. Delete package-lock.json from your project
 11. Run yarn on your project
+    NOTE: If you get a permission error to write on node_modules directory use:
+
+```bash
+sudo chown -R $USER [Path to your node_modules]
+```
+
 12. Install babel-eslint
 
 ```bash
 yarn add babel-eslint -D
-```
-
-NOTE: If you get a permission error to write on node_modules directory use:
-
-```bash
-sudo chown -R $USER [Path to your node_modules]
 ```
 
 13. On VSCode press CTRL+SHIFT+P then write 'json' to Open Settings. The following statements must be present, if not set it:
@@ -218,9 +218,12 @@ To use auto-complete paths on project using babel-root-import.
 2. Write the following content:
 
 ```javascript
-"settings": {
-    "import/resolver":{
-      "babel-plugin-root-import":{}
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
     }
   }
+}
 ```
