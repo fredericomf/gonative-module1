@@ -1,21 +1,23 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View, Text, StyleSheet, Platform,
+} from 'react-native';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const Todo = props => (
   <View>
-    <Text>{props.title}</Text>
+    <Text style={styles.text}>{props.title}</Text>
   </View>
 );
 
 Todo.defaultProps = {
-  title: "Todo padrão"
+  title: 'Todo padrão',
 };
 
 Todo.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 // STUDY_NOTES: Statefull component example:
@@ -37,6 +39,17 @@ Todo.propTypes = {
 //   }
 // }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text: {
+    ...Platform.select({
+      ios: {
+        fontWeight: 'bold',
+      },
+      android: {
+        fontSize: 24,
+      },
+    }),
+  },
+});
 
 export default Todo;

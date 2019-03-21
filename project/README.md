@@ -166,32 +166,32 @@ This plugin help us to work easily with imports
 yarn add babel-plugin-root-import -D
 ```
 
-Set the babel.config.js to:
+Set the .babelrc to:
 
 ```javascript
-module.exports = {
-  presets: ["module:metro-react-native-babel-preset"],
-  plugins: [
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
     [
       "babel-plugin-root-import",
       {
-        rootPathSuffix: "src"
+        "rootPathSuffix": "src"
       }
     ]
   ],
-  env: {
-    production: {
-      plugins: [
+  "env": {
+    "production": {
+      "plugins": [
         [
           "babel-plugin-root-import",
           {
-            rootPathSuffix: "src"
+            "rootPathSuffix": "src"
           }
         ]
       ]
     }
   }
-};
+}
 ```
 
 STUDY_NOTES: This plugin let me able to use '~/path-to-implementation' than '../../../path/path2/etc...'. An example can be found at '/src/index.js'.
@@ -199,7 +199,7 @@ STUDY_NOTES: This plugin let me able to use '~/path-to-implementation' than '../
 To resolve error warning of eslint (on using root plugin):
 
 ```bash
-yarn add eslint-import-resolver-babel-plugin-root-import -D
+yarn add eslint-plugin-import eslint-import-resolver-babel-plugin-root-import -D
 ```
 
 After installed this plugin, add "settings" node at '.eslintrc.json':
